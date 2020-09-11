@@ -1,0 +1,63 @@
+h2, h4, h6{
+	color:blue;
+}
+
+h1, h3{
+	color: gray;
+}
+
+.education #title {
+	color:gray;
+	font-size: large;
+
+ }
+
+ .education .desc {
+ 	color:red;
+ }
+
+ .experience  #first{
+	list-style-type: lower-roman;
+ }
+
+ .skills li:nth-child(1){
+ 	font-family: Arial, sans-serif;
+ }
+
+ .skills li:nth-child(2){
+ 	font-family: "Times New Roman", Times, serif;
+ }
+
+  .skills li:nth-child(3){
+ 	font-family: "Courier New Lucida Console", monospace;
+ }
+.skills li:nth-child(4){
+ font-family: Impact, Charcoal, sans-serif;
+}
+
+table {
+	border: 10px solid red;
+  
+}
+
+.movies a{
+	text-decoration: none;
+	color:blue;
+}
+
+.movies a:hover{
+	text-decoration: underline ;
+	color:green;
+}
+
+
+.footer{
+	background-color: gray;
+	 
+    left: 0;
+    bottom: 0;
+    height: 100px;
+    width: 100%;
+
+    position:sticky;
+}
