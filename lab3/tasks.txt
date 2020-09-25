@@ -1,0 +1,5 @@
+"Monday: Clean,Cook,Play" (3 tasks total)
+"Tuesday: Clean,Cook,Play" (3 tasks total)
+"Wednesday: Clean,Cook,Play" (3 tasks total)
+"Thursday: Clean,Cook,Play" (3 tasks total)
+"Friday: Clean,Cook,Play" (3 tasks total)
