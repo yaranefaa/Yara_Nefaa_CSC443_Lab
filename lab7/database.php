@@ -62,7 +62,7 @@ function addUser($connection, $tablename, $password, $ccpassword, $username,$bir
     }
     $hashedPassword= md5($password);
     
-    executeQuery($connection,"Insert into $tablename (username,password) values ('$username','$hashedPassword','$birthday')");
+    executeQuery($connection,"Insert into $tablename (username,password,birthday) values ('$username','$hashedPassword','$birthday')");
     return 1;
 }
 
