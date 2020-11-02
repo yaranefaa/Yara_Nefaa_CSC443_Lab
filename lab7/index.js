@@ -1,22 +1,51 @@
-$('#submit_btn').click(function(){
 
-    let data = {};
+
+
+$("#submit_btn").on("click",function(){
+
+  /*  let data = {};
     data.username = $('#username').val();
     data.password = $('#password').val();
     data.cc_password = $('#cc_password').val();
-    data.birthday = $('#birthday').val();
+    data.birthday = $('#birthday').val();*/
 
-    console.log("button clicked");
+    /*console.log("button clicked");
+    console.log($("#username").val());*/
     $.ajax({
         
-        type: "POST",
+        type: 'POST',
         url: "./signup.php",
-        data: data,
-        dataType: "text",
-        cache: false,
+        data: {
+            username:$("#username").val(),
+            password:$("#password").val(),
+            cc_password:$("#cc_password").val(),
+            birthday:$("#birthday").val()
+        },
+        
+        
         success: function (response) {
-            alert(data.username);
+            $("#page").html(response);
+            
+            console.log("ajax success");
+            if(response=="1"){
+                alert("successfully added!");
+                window.location.replace("./welcome.html");
+
+            }else{
+                if(response=="-1"){
+                    alert("user already exists");
+                    window.location.replace("./signup.html");
+                }else{
+                    alert("password do not match");
+                    window.location.replace("./signup.html");
+                }
+            }
+            
+        },
+        error: function(jqxhr, status, exception) {
+            console.log(exception);
         }
     });
-        return false;
-});
+        
+}
+);
