@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Simple Map</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDswM21BZW2MAar1LEdj3AZZjHfCP3GdlE&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <style type="text/css">
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script>
+      let map;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById("map"), {
+          center: { lat: -34.397, lng: 150.644 },
+          zoom: 8,
+        });
+      }
+      
+      
+    </script>
+  </head>
+  <body>
+    Longitude<input type="text" id="longitude">
+    Latitude<input type="text" id="latitude">
+    <input type="button" value="Submit" id="btn">
+    <input type="button" value="Current Location" id="btn1">
+    <div id="map"></div>
+  </body>
+  <script>  document.getElementById("btn").addEventListener("click",()=>{
+        
+    const myLatLng = { lat: parseInt(document.getElementById("latitude").value), lng: parseInt(document.getElementById("longitude").value )};
+   const map = new google.maps.Map(document.getElementById("map"), {
+       zoom: 4,
+       center: myLatLng,
+   });
+
+   new google.maps.Marker({
+position: myLatLng,
+map,
+title: "My Location",
+});
+
+ })</script>
+
+<script>
+    
+    document.getElementById("btn1").addEventListener("click",()=>{
+        if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+      } else {
+        console.log("Error");
+      }
+    })
+      
+    
+    
+    function showPosition(position) {
+      let latitude= position.coords.latitude;
+      let longitude= position.coords.longitude;
+
+
+     
+        
+        const myLatLng = { lat: latitude, lng: longitude};
+       const map = new google.maps.Map(document.getElementById("map"), {
+           zoom: 4,
+           center: myLatLng,
+       });
+    
+       new google.maps.Marker({
+    position: myLatLng,
+    map,
+    title: "My Location",
+    });
+    
+}
+    </script>
+
+
+</html>
